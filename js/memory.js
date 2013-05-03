@@ -32,33 +32,52 @@ $(document).ready(function(){
 
     $('.tile').on('click', function(){
       if( ($('.hidden').length)%2 === 0 ){
-        console.log("hi");
-      $(this).children(':first').fadeTo('fast', 0);
+        // console.log("hi");
+      // $(this).children(':first').fadeTo('fast', 0);
       $(this).children(':last').removeClass('hidden');
       $(this).children(':last').addClass('examining');
 
+        // console.log("a");
+
+      // setTimeout(function(){$('.back').addClass('hidden');}, 2000);
+      // $(this).children(':last').addClass('examining');
+      //setTimeout(alert("hello"), 500);
+
+      // setTimeout(function(){$(this).children(':last').addClass('argaba');}, 2000);
+        // console.log(($(this).children(':last')));
+
+          // setTimeout(function(){$(this).children(':first').fadeTo('fast', 1);}, 800);
       }
       else {
         if( $(this).children(':last').html() === $('.examining').html() ){
+            console.log('hi');
+            $(this).children(':last').removeClass('hidden');
+            $(this).children(':last').removeClass('examining');
+            $(this).children(':last').addClass('matched');
 
             $('.examining').addClass('matched');
             $('.examining').removeClass('examining');
 
-            $(this).children(':first').fadeTo('fast', 0);
-            $(this).children(':last').removeClass('hidden');
 
-            $(this).children(':last').addClass('matched');
+      //       $('.examining').addClass('matched');
+      //       $('.examining').removeClass('examining');
+
+      //       $(this).children(':first').fadeTo('fast', 0);
+      //       $(this).children(':last').removeClass('hidden');
+
+      //       $(this).children(':last').addClass('matched');
 
         }
         else {
-          $(this).children(':first').fadeTo('fast', 0);
-          $(this).children(':last').removeClass('hidden');
-          setTimeout(function(){$(this).children(':last').addClass("hidden");}, 800);
-          // setTimeout(function(){$(this).children(':first').fadeIn('fast', 0);}, 800);
-          $('.examining').removeClass('examining');
+
+      //     $(this).children(':first').fadeTo('fast', 0);
+      //     $(this).children(':last').removeClass('hidden');
+      //     setTimeout(function(){$(this).children(':last').addClass("hidden");}, 800);
+      //     setTimeout(function(){$(this).children(':first').fadeTo('fast', 1);}, 800);
+      //     $('.examining').removeClass('examining');
 
 
-        }
+      //   }
 
         }
 
@@ -77,6 +96,7 @@ $(document).ready(function(){
       $(this).html(alphabetarray[randomnumber]);
 
       letterTiles.push(randomnumber);
+      console.log(letterTiles);
     });
 
     function get_occurance_count(randomnumber){
