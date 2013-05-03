@@ -1,5 +1,4 @@
 
-
 $(document).ready(function(){
 
   var letterTiles = new Array();
@@ -25,10 +24,45 @@ $(document).ready(function(){
       // $(this).next().removeClass('hidden');
       // $(this).remove();
       // $(this).sibling().removeClass('hidden');
+
+    // $('.tile').on('click', function(){
+    //   $(this).children(':first').fadeTo('fast', 0);
+    //   $(this).children(':last').removeClass('hidden');
+    // });
+
     $('.tile').on('click', function(){
+      if( ($('.hidden').length)%2 === 0 ){
+        console.log("hi");
       $(this).children(':first').fadeTo('fast', 0);
       $(this).children(':last').removeClass('hidden');
-    });
+      $(this).children(':last').addClass('examining');
+
+      }
+      else {
+        if( $(this).children(':last').html() === $('.examining').html() ){
+
+            $('.examining').addClass('matched');
+            $('.examining').removeClass('examining');
+
+            $(this).children(':first').fadeTo('fast', 0);
+            $(this).children(':last').removeClass('hidden');
+
+            $(this).children(':last').addClass('matched');
+
+        }
+        else {
+          $(this).children(':first').fadeTo('fast', 0);
+          $(this).children(':last').removeClass('hidden');
+          setTimeout(function(){$(this).children(':last').addClass("hidden");}, 800);
+          // setTimeout(function(){$(this).children(':first').fadeIn('fast', 0);}, 800);
+          $('.examining').removeClass('examining');
+
+
+        }
+
+        }
+
+      });
 
 
 
@@ -38,9 +72,9 @@ $(document).ready(function(){
       while (get_occurance_count(randomnumber)) {
         randomnumber = Math.floor(Math.random()*Math.round(numOfTiles/2));
       }
-      console.log(randomnumber);
+      // console.log(randomnumber);
       // $(this).css("background","url('images/"+randomnumber+".png')").css("background-repeat","no-repeat");
-      $(this).html("<b>" + alphabetarray[randomnumber]+ "</b>");
+      $(this).html(alphabetarray[randomnumber]);
 
       letterTiles.push(randomnumber);
     });
