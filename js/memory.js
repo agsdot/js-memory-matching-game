@@ -68,7 +68,7 @@ $(document).ready(function(){
       //       $(this).children(':last').addClass('matched');
 
         }
-        else {
+        // else {
 
       //     $(this).children(':first').fadeTo('fast', 0);
       //     $(this).children(':last').removeClass('hidden');
@@ -77,9 +77,9 @@ $(document).ready(function(){
       //     $('.examining').removeClass('examining');
 
 
-      //   }
-
         }
+
+        // }
 
       });
 
