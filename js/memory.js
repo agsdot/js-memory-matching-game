@@ -68,7 +68,8 @@ $(document).ready(function(){
       //       $(this).children(':last').addClass('matched');
 
         }
-        // else {
+        else {
+          console.log('dont match boss')
 
       //     $(this).children(':first').fadeTo('fast', 0);
       //     $(this).children(':last').removeClass('hidden');
@@ -79,7 +80,7 @@ $(document).ready(function(){
 
         }
 
-        // }
+        }
 
       });
 
